@@ -12,30 +12,29 @@ function displayStudentInformation(student){
 }
 
 function getScoreStatistics(scores){
-    let sumOfStudentScores = 0;
-    let maxOfStudentScores = 0;
-    let minOfStudentScores = 100;
+    let sum = 0;
+    let max = 0;
+    let min = 100;
 
      // Loop through each of the scores that belong to this student.
-    for (let indexOfScore = 0; indexOfScore < scoresCount; indexOfScore++) {
-        let studentScore = student.scores[indexOfScore];
+    for (let i = 0; i < scoresCount; i++) {
+        let studentScore = student.scores[i];
 
-        sumOfStudentScores += studentScore;
-        if (studentScore > maxOfStudentScores) {
-            maxOfStudentScores = studentScore;
+        sum += studentScore;
+        if (studentScore > max) {
+            max = studentScore;
         }
-        if (studentScore < minOfStudentScores) {
-            minOfStudentScores = studentScore;
+        if (studentScore < min) {
+            min = studentScore;
         }
-
     }
 
-    let averageScore = sumOfStudentScores / scoresCount;
+    let avg = sum / scoresCount;
 
     let scoreStatistics = {
-        average: averageScore,
-        min: minOfStudentScores,
-        max: maxOfStudentScores
+        average: avg,
+        min: min,
+        max: max
     }
 
     return scoreStatistics;
